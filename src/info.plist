@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.fymeng.pwgen</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>4D7837F8-0C50-4FB1-B42F-7659108496A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>38D643F9-49A6-42FF-8AAB-68FB0D09C88E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E6E7B7EF-C6D9-41C3-84E4-7F123485A083</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7096449-8405-4728-B8BD-F6D74DFC81E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>710AE43C-B5F2-453D-A93D-E07A65869FA4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D7837F8-0C50-4FB1-B42F-7659108496A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Fanyu Meng</string>
+	<key>description</key>
+	<string>Generate customizable random passwords</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Password Generator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>./config.json</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>38D643F9-49A6-42FF-8AAB-68FB0D09C88E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>pwgen</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python pwgen.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Generate password</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>710AE43C-B5F2-453D-A93D-E07A65869FA4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>REVEALCONFIGFILE</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>E6E7B7EF-C6D9-41C3-84E4-7F123485A083</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4D7837F8-0C50-4FB1-B42F-7659108496A5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C7096449-8405-4728-B8BD-F6D74DFC81E3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Generate customizable random passwords
+
+## Usages
+- Use the keyword 'pwgen' to generate 5 passwords
+- Select a desirable password and copy it to clipboard
+
+## Configs
+- To edit password format, use the keyword 'pwgen' and select the last option "Edit config"
+- Edit `config.json` that pops up
+- This workflow currently supports 3 types of password blocks: random words, random numbers and deliminators, and you can customize and re-order the blocks as you like
+
+### Random Words
+- The workflow uses `/usr/dict/words`, `/usr/share/dict/words` or from `https://gist.github.com/wchargin/8927565` as the base dictionary and filters out all words that only contains English letters
+- To add a random word block to the password, add the following block to `config.json`:
+
+```json
+
+{
+  "RandomWord": {
+    "capital": "first",
+    "min_len": 3,
+    "max_len": 6
+  }
+}
+```
+
+- `capital` can be set to `"none"`, `"first"` or `"random"`. `"none"` will make the word all lower case, `"first"` will capitalize the first letter of the word, and `"random"` will randomly capitalize the letters
+- `min_len` and `max_len` controls the length of acceptable words
+- The default values are is shown in the above code block. Remove any arguments to use the default values
+
+### Random Number
+- To add a list of random numbers to the password, add the following block to `config.json`:
+
+```json
+
+{
+  "RandomNumber": {
+    "num_digits": 4
+  }
+}
+```
+
+- `num_digits` controls the number of digits in this block of random numbers
+- The default values are is shown in the above code block. Remove the arguments to use the default value
+
+
+### Deliminator
+- To add a deliminator or a special symbol, add the following block to `config.json`:
+
+```json
+
+{
+  "Deliminator": {
+    "c": "-"
+  }
+}
+```
+
+- `c` is the deliminator of arbitrary length
+- The default values are is shown in the above code block. Remove the arguments to use the default value</string>
+	<key>uidata</key>
+	<dict>
+		<key>38D643F9-49A6-42FF-8AAB-68FB0D09C88E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>505</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>4D7837F8-0C50-4FB1-B42F-7659108496A5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>385</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
+		<key>710AE43C-B5F2-453D-A93D-E07A65869FA4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>195</integer>
+			<key>ypos</key>
+			<integer>205</integer>
+		</dict>
+		<key>C7096449-8405-4728-B8BD-F6D74DFC81E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>505</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

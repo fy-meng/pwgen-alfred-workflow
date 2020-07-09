@@ -1,0 +1,23 @@
+[
+  {
+    "RandomWord": {}
+  },
+  {
+    "Deliminator": {
+      "c": "-"
+    }
+  },
+  {
+    "RandomNumber": {
+      "num_digits": 4
+    }
+  },
+  {
+    "Deliminator": {
+      "c": "-"
+    }
+  },
+  {
+    "RandomWord": {}
+  }
+]
