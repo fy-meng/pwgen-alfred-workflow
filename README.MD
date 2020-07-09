@@ -1,5 +1,9 @@
 # Password Generator Alfred Workflow
 
+## Download
+
+[releases](https://github.com/fy-meng/pwgen-alfred-workflow/releases)
+
 ## Usages
 - Use the keyword 'pwgen' to generate 5 passwords
 - Select a desirable password and copy it to clipboard
